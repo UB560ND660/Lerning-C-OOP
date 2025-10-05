@@ -10,9 +10,11 @@ class AbstractEmployee
 class Employee : AbstractEmployee
 {
 private:
-    string Name;
     string Company;
     int Age;
+
+protected:
+    string Name;
 
 public:
     Employee(string name, string company, int age)
@@ -74,7 +76,7 @@ public:
     }
 
     void FixBug() {
-        std::cout <<getName()<<" fixed bug using "<< FavProgrammingLang << std::endl;
+        std::cout <<Name<<" fixed bug using "<< FavProgrammingLang << std::endl;
     }
 };
 
