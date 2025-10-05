@@ -64,11 +64,22 @@ public:
     }
 };
 
+class Developer : Employee
+{
+public:
+    string FavProgrammingLang;
+    Developer(string name, string company, int age,string lang):Employee(name, company, age)
+    {
+        this->FavProgrammingLang = lang;
+    }
+
+    void FixBug() {
+        std::cout <<getName()<<" fixed bug using "<< FavProgrammingLang << std::endl;
+    }
+};
+
 int main()
 {
-    Employee e1 = Employee("Saldina", "YT-Code Beauty", 25);
-    Employee e2 = Employee("Choko", "SAuy", 42);
-
-    e1.AskforPromotion();
-    e2.AskforPromotion();
+    Developer d = Developer("Joy","Samsung", 23, "C++");
+    d.FixBug();
 }
